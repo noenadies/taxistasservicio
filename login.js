@@ -16,7 +16,6 @@ var vnodelatuser="";
 var vlatmia="";
 var vlngmia="";
 
-alert("ok");
 
  // Initialize Firebase
   var config = {
@@ -147,7 +146,7 @@ var idx=0;
 
 
 function androiniciawaze(){
- showAndroiinicia();
+showAndroidToast("2","","","");
 
 }
 
