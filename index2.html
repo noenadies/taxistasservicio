@@ -1,0 +1,49 @@
+a<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset=utf-8>
+		<title>My first three.js app</title>
+		<style>
+			body { margin: 0; }
+			canvas { width: 100%; height: 100% }
+		</style>
+	</head>
+	<body>
+		Last id <input id="idid" type="text" name="id" value=""><br>
+		Last nodep <input id="idnp" type="text" name="np" value=""><br>
+		Last nodeh: <input id="idnh" type="text" name="nh" value=""><br>
+		Last msn: <input id="idmsn" type="text" name="msn" value=""><br>
+
+	<p id="demo" >Click me to change my HTML content (innerHTML).</p>
+
+
+		<button onclick="myFunction()">Click me</button>
+		<script src="js/three.js"></script>
+		<script>
+		
+var vid="";
+var vnp="";
+var vnh="";
+var vmsn="";
+		function myFunction(){
+
+vid=document.getElementById("idid").value;
+
+vnp=document.getElementById("idnp").value;
+vnh=document.getElementById("idnh").value;
+vmsn=document.getElementById("idmsn").value;
+//alert(vid+"  "+vnp+"  "+vnh+ "   "+vmsn);
+//alert("aca");
+ showAndroidToast(vid,vnp,vnh);
+
+		}
+var vreturn="";
+   function showAndroidToast(id,st1,st2) {
+       vreturn=  window.Android.showToast(id,st1,st2);
+ document.getElementById("demo").innerHTML = vreturn;
+     //  console.log("andorid  msn  " +vreturn);
+    }
+
+		</script>
+	</body>
+</html>
