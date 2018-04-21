@@ -29,6 +29,14 @@
     <div id="demo"></div>
 <script>
   
+
+var vnodelat="aaa";
+var vnodelng="";
+var vnodelnguser="";
+var vnodelatuser="";
+
+
+
 var vreturn="";
 var vid="1";
 var vndpadre="taxis";
@@ -36,20 +44,25 @@ var vndhijo="uno";
    function showAndroidToast(st1,st2,st3,st4) {
 
     vid=st1;
-       vreturn=  window.Android.showToast(vid,vndpadre,vndhijo);
+    vndpadre=st2;
+    vndhijo=st3;
+      // vreturn=  window.Android.showToast(vid,vndpadre,vndhijo);
  document.getElementById("demo").innerHTML = vreturn;
-   //  alert(st);
+ if(vid=="coorde"){
+vnodelat=window.Android.showToast("latm",vndpadre,vndhijo);
+vnodelng=window.Android.showToast("lngm",vndpadre,vndhijo);
+vnodelnguser=window.Android.showToast("lngus",vndpadre,vndhijo);
+vnodelatuser=window.Android.showToast("latus",vndpadre,vndhijo);
+vndpadre=window.Android.showToast("nodep",vndpadre,vndhijo);
+
+document.getElementById("demo").innerHTML = vnodelnguser+" lauylnu "+vnodelatuser;
+}
+
+  
     }
 
-/*
-     function showAndroiinicia() {
-vid="2";
-    
-  var vreturninicio=  window.Android.showToast(vid,vndpadre,vndhijo;
-        document.getElementById("demo").innerHTML = vreturninicio;
- //alert(333);
-    }*/
 
+showAndroidToast("coorde","","","");
 
     </script>
      <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
