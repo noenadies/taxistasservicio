@@ -24,10 +24,17 @@
 
  <button id ="idbutonmap" onclick="myFunction2()">map</button>
 
-  <button id ="idbuton2" onclick="androiniciawaze()">android2</button><br>
+
    <button id ="idbuton3" onclick="androiniciawaze()">android3</button>
-<p id="demo" onclick="">Click me to change my HTML content (innerHTML).</p>
-<script>
+<p id="demo" >Click me to change my HTML content (innerHTML).</p>
+
+     <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
+<script  src="login.js"></script>
+        </script> <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCV4ya46Yoag-iGeJb5SUwZ2q1Irx0UjnU&callback=initMap">
+    </script>
+
+    <script>
   
 
 var vnodelat="aaa";
@@ -55,19 +62,14 @@ vnodelnguser=window.Android.showToast("lngus",vndpadre,vndhijo);
 vnodelatuser=window.Android.showToast("latus",vndpadre,vndhijo);
 vndpadre=window.Android.showToast("nodep",vndpadre,vndhijo);
 
-document.getElementById("demo").innerHTML = vnodelatuser+" lauylnu "+  vnodelnguser+" " +vnodelatuse+ " laln "+ vnodelnguser;
+document.getElementById("demo").innerHTML = vnodelatuser+" lauylnu "+  vnodelnguser+" " +vnodelat+ " laln "+vnodelng;
 }
 
   
     }
-//document.getElementById("demo").innerHTML = "okkkkkkkkkkk";
+document.getElementById("demo").innerHTML = "okkkkkkkkkkk";
 showAndroidToast("coorde","","","");
 
-    </script>
-     <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
-<script  src="login.js"></script>
-        </script> <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCV4ya46Yoag-iGeJb5SUwZ2q1Irx0UjnU&callback=initMap">
     </script>
 
 
