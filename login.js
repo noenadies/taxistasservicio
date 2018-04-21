@@ -1,5 +1,5 @@
 
-var arraymarkes ;
+/*var arraymarkes ;
 var generalkey;
 
 var idgeneral=0;
@@ -9,10 +9,7 @@ var objh;
 var markers = [];
 
 var vnodep="";
-var vnodelat="";
-var vnodelng="";
-var vnodelnguser="";
-var vnodelatuser="";
+
 var vlatmia="";
 var vlngmia="";
 
@@ -46,77 +43,49 @@ var arrnode2=[];
 function unavesmensaje2()
 {
 
-//var c=String(cedu);
-//var cl= String(celu);child("user").
+
 
   firebase.database().ref().child("taxis").once('value').then(function(snapshot) {
     var username = (snapshot.val() && snapshot.val().username) || 'Anonymous';
-    // ...
-    //alert(  snapshot.val());
+
     mi=snapshot.val();
-   // alert(cedu+"  ced celu"+celu);
-var s=mi;// firebase.database().ref().child("user");
+
+var s=mi;
 generalkey=snapshot.key;
 general=s;
-//console.log("un "+generalkey);
+
+
 objh=Object.keys(mi);
 idgeneral=0;
 var colocar;
 for (var indice in objh) {
    colocar = {idscript: idgeneral, idfirebase:objh[indice]};
-//arrnode2.push(idgeneral,objh[indice]);
+
 arrnode2.push(colocar);
-//{firstname : "Malcom", lastname: "Reynolds"}
+
 idgeneral=idgeneral+1;
-//console.log("Objectdfdkeys(s) "+Object.keys(s));
-//console.log("ind'" + indice + "un  " + objh[indice]);
 
 
 }
-/*for (var indi in arrnode2) {
-arrnode2.push(idgeneral,objh[indice]);
-//console.log("Objectdfdkeys(s) "+Object.keys(s));
-//console.log( "fi " + arrnode2[indi]);
-//console.log( "idgeneral " + idgeneral);
-
-}*/
-
-
-//   console.log( "id " +Object.keys(arrnode2) );
-
-/*
-
-var i;
-for (i = 0; i < arrnode2.length; i++) { 
-console.log( "arrnode2 " + arrnode2[i].idfirebase);
-}
-*/
-
-
-/*
-for (var i=1 ; i<=idgeneral;i=i+1){
-
-//console.log("s "+ Object.keys(arrnode2));
-console.log("s "+ arrnode2[i]);
-}*/
-
- 
-   // document.getElementById("idcumplimiento").innerHTML = snapshot.val();
   });
 
 
 }
 
-// tieen los id node de firebase y id  de
+
+function retornoandro(l,ln){
+ //vnodelat=l;
+ vnodelng=ln;
+
+ vnodelnguser="";
+ vnodelatuser="";
+ alert("vnodelat "+ vnodelat);
+
+}
 
 
-
-//busco la informacion del json traido 
-// firebase  los valor ejemplo general ceria ya el padres en estecaso
-//de fireabse taxi pues el node  de taxis los hijos  son uno dos y tres  ese seria hijo  nodh
-// un hijo mas profundo nodh2 seria  cedula telefono, nombre ect 
 function  nodepartei(nodh,nodh2){
-//console.log( "general.uno.cedula  = general[nodh][nodh2]  " + general[nodh][nodh2]);
+
 return general[nodh][nodh2]; 
 }
 
@@ -208,7 +177,7 @@ console.log("s "+ arrnode2[i]);
 
  
    // document.getElementById("idcumplimiento").innerHTML = snapshot.val();
-  });
+ /* });
 
 
 }
@@ -452,6 +421,8 @@ function myFunction2(){
 
         });*/
 //arraymarkes.push();
+
+/*
   var vidrecore=0;
   var image="https://cdn1.iconfinder.com/data/icons/Map-Markers-Icons-Demo-PNG/32/Map-Marker-Marker-Inside-Chartreuse.png";
   for (var id in general) {
