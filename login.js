@@ -149,7 +149,7 @@ function androiniciawaze(){
 showAndroidToast("2","","","");
 
 }
-
+//4.630149, -74.136172
 function llamarandroid(){
 
     // vreturn=  window.Android.showToast(id,st1,st2);
@@ -225,6 +225,7 @@ function myFunction2(){
    initMap();
    andridmarker(222, map) ;
    eventoonclimaker(markerand);
+   showAndroidToast("1","","","")
 
   for (var ids in general ){
 
