@@ -23,10 +23,10 @@
 
 
  <button id ="idbutonmap" onclick="myFunction2()">map</button>
- <button id ="idbuton" onclick="androiniciawaze()">android</button><br>
+
   <button id ="idbuton2" onclick="androiniciawaze()">android2</button><br>
    <button id ="idbuton3" onclick="androiniciawaze()">android3</button>
-    <div id="demo"></div>
+<p id="demo" onclick="">Click me to change my HTML content (innerHTML).</p>
 <script>
   
 
@@ -55,14 +55,14 @@ vnodelnguser=window.Android.showToast("lngus",vndpadre,vndhijo);
 vnodelatuser=window.Android.showToast("latus",vndpadre,vndhijo);
 vndpadre=window.Android.showToast("nodep",vndpadre,vndhijo);
 
-document.getElementById("demo").innerHTML = vnodelatuser+" lauylnu "+  vnodelnguser+" ... " +vnodelatuse " laln "+ vnodelnguser;
+document.getElementById("demo").innerHTML = vnodelatuser+" lauylnu "+  vnodelnguser+" " +vnodelatuse+ " laln "+ vnodelnguser;
 }
 
   
     }
+//document.getElementById("demo").innerHTML = "okkkkkkkkkkk";
 
-
-showAndroidToast("coorde","","","");
+//showAndroidToast("coorde","","","");
 
     </script>
      <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
