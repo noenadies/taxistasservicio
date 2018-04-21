@@ -1,20 +1,10 @@
 
-var arraymarkes ;
-var generalkey;
 
-var idgeneral=0;
-var objh;
+
 
   var map;
 var markers = [];
 
-var vnodep="";
-var vnodelat="";
-var vnodelng="";
-var vnodelnguser="";
-var vnodelatuser="";
-var vlatmia="";
-var vlngmia="";
 
 
  // Initialize Firebase
@@ -30,156 +20,24 @@ var vlngmia="";
 
 
 
-var general;
-
-
-
-unavesmensaje();
 
 
 
 
-var arrnode2=[];
-
-
-
-function unavesmensaje2()
-{
-
-//var c=String(cedu);
-//var cl= String(celu);child("user").
-
-  firebase.database().ref().child("taxis").once('value').then(function(snapshot) {
-    var username = (snapshot.val() && snapshot.val().username) || 'Anonymous';
-    // ...
-    //alert(  snapshot.val());
-    mi=snapshot.val();
-   // alert(cedu+"  ced celu"+celu);
-var s=mi;// firebase.database().ref().child("user");
-generalkey=snapshot.key;
-general=s;
-//console.log("un "+generalkey);
-objh=Object.keys(mi);
-idgeneral=0;
-var colocar;
-for (var indice in objh) {
-   colocar = {idscript: idgeneral, idfirebase:objh[indice]};
-//arrnode2.push(idgeneral,objh[indice]);
-arrnode2.push(colocar);
-//{firstname : "Malcom", lastname: "Reynolds"}
-idgeneral=idgeneral+1;
-//console.log("Objectdfdkeys(s) "+Object.keys(s));
-//console.log("ind'" + indice + "un  " + objh[indice]);
 
 
 
 
+
+var latm=StF(vnodelat);
+var lngm=StF(vnodelng);
+var latus=StF(vnodelatuser);
+var lngus=StF(vnodelnguser);
+
+function StF(st){
+
+return parseFloat(st);
 }
-
-
-function  nodepartei(nodh,nodh2){
-
-return general[nodh][nodh2]; 
-}
-
-
-var noregistro=true;
-function validadcionuser(cel,ced){
-for(var val in general){
-    console.log("cel "+general[val].cedula);
-   if(general[val].cel==cel&&general[val].cedula==ced){
-
-    vlatuser=general[val].latuser;
-    vlnguser=general[val].lnguser;
-    vlatmia=general[val].lat;
-    vlngmia=general[val].lng;
-
-showAndroidToast(vlatmia,vlngmia,vlatuser,vlnguser);
-
- alert("encontrado login ");
- noregistro=false;
-   } 
-}
-if(noregistro){
-alert("no encontrado login ");
-}
-}
-var idx=0;
-
-
-function androiniciawaze(){
-showAndroidToast("2","","","");
-
-}
-//4.630149, -74.136172
-function llamarandroid(){
-
-
- document.getElementById("demo").innerHTML = vreturn;
-}
-
-
-
-function unavesmensaje()
-{
-
-
-
-  firebase.database().ref().child("taxis").once('value').then(function(snapshot) {
-    var username = (snapshot.val() && snapshot.val().username) || 'Anonymous';
-
-    mi=snapshot.val();
-
-var s=mi;
-generalkey=snapshot.key;
-general=s;
-//console.log("un "+generalkey);
-objh=Object.keys(mi);
-idgeneral=0;
-for (var indice in objh) {
-
- colocar = {idscript: idgeneral, idfirebase:objh[indice]};
-
-arrnode2.push(colocar);
-
-
-}
-
-
-
-
-for (var indi in arrnode2) {
-arrnode2.push(idgeneral,objh[indice]);
-
-
-}
-  });
-
-
-}
-
-
-
-
-var idx=0;
-
-
-function myFunction2(){
-
-   unavesmensaje();
-   initMap();
-   andridmarker(222, map) ;
-   eventoonclimaker(markerand);
-   showAndroidToast("1","","","")
-
-  for (var ids in general ){
-
-    console.log("laattsi   "+general[ids].lat);
-  }
-}
-
-
-
 
 
     function initMap() {
@@ -395,12 +253,10 @@ function myFunction2(){
         });
 
 
-
-  var vidrecore=0;
   var image="https://cdn1.iconfinder.com/data/icons/Map-Markers-Icons-Demo-PNG/32/Map-Marker-Marker-Inside-Chartreuse.png";
 
            var marker = new google.maps.Marker({
-           position:{lat:vnodelat, lng:vnodelng},
+           position:{lat:latm, lng:lngm},
            //  icon: icons[feature.type].icon,
             map: map,
             title:vndhijo,
@@ -415,7 +271,7 @@ function myFunction2(){
 
 
 
-   markers.push(marker);
+
 
    marker.addListener('click', function(e) {
    map.setZoom(13);
@@ -455,12 +311,10 @@ function andridmarker(location, map) {
   // Add the marker at the clicked location, and add the next-available label
   // from the array of alphabetical characters.
    markerand = new google.maps.Marker({
-    position: {lat: vnodelnguser, lng:vnodelatuser},
+    position: {lat:latus, lng:lngus},
    map: map,
    icon:imaandroidiconmaker,
    title:"android",
-           
-
 
   });
 }
