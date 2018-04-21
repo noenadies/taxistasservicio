@@ -72,51 +72,13 @@ idgeneral=idgeneral+1;
 //console.log("ind'" + indice + "un  " + objh[indice]);
 
 
-}
-/*for (var indi in arrnode2) {
-arrnode2.push(idgeneral,objh[indice]);
-//console.log("Objectdfdkeys(s) "+Object.keys(s));
-//console.log( "fi " + arrnode2[indi]);
-//console.log( "idgeneral " + idgeneral);
-
-}*/
-
-
-//   console.log( "id " +Object.keys(arrnode2) );
-
-/*
-
-var i;
-for (i = 0; i < arrnode2.length; i++) { 
-console.log( "arrnode2 " + arrnode2[i].idfirebase);
-}
-*/
-
-
-/*
-for (var i=1 ; i<=idgeneral;i=i+1){
-
-//console.log("s "+ Object.keys(arrnode2));
-console.log("s "+ arrnode2[i]);
-}*/
-
- 
-   // document.getElementById("idcumplimiento").innerHTML = snapshot.val();
-  });
 
 
 }
 
-// tieen los id node de firebase y id  de
 
-
-
-//busco la informacion del json traido 
-// firebase  los valor ejemplo general ceria ya el padres en estecaso
-//de fireabse taxi pues el node  de taxis los hijos  son uno dos y tres  ese seria hijo  nodh
-// un hijo mas profundo nodh2 seria  cedula telefono, nombre ect 
 function  nodepartei(nodh,nodh2){
-//console.log( "general.uno.cedula  = general[nodh][nodh2]  " + general[nodh][nodh2]);
+
 return general[nodh][nodh2]; 
 }
 
@@ -152,7 +114,7 @@ showAndroidToast("2","","","");
 //4.630149, -74.136172
 function llamarandroid(){
 
-    // vreturn=  window.Android.showToast(id,st1,st2);
+
  document.getElementById("demo").innerHTML = vreturn;
 }
 
@@ -161,16 +123,14 @@ function llamarandroid(){
 function unavesmensaje()
 {
 
-//var c=String(cedu);
-//var cl= String(celu);child("user").
+
 
   firebase.database().ref().child("taxis").once('value').then(function(snapshot) {
     var username = (snapshot.val() && snapshot.val().username) || 'Anonymous';
-    // ...
-    //alert(  snapshot.val());
+
     mi=snapshot.val();
-   // alert(cedu+"  ced celu"+celu);
-var s=mi;// firebase.database().ref().child("user");
+
+var s=mi;
 generalkey=snapshot.key;
 general=s;
 //console.log("un "+generalkey);
@@ -179,13 +139,8 @@ idgeneral=0;
 for (var indice in objh) {
 
  colocar = {idscript: idgeneral, idfirebase:objh[indice]};
-//arrnode2.push(idgeneral,objh[indice]);
-arrnode2.push(colocar);
 
-//arrnode2.push(idgeneral,objh[indice]);
-//idgeneral=idgeneral+1;
-//console.log("Objectdfdkeys(s) "+Object.keys(s));
-//console.log("ind'" + indice + "un  " + objh[indice]);
+arrnode2.push(colocar);
 
 
 }
@@ -195,19 +150,9 @@ arrnode2.push(colocar);
 
 for (var indi in arrnode2) {
 arrnode2.push(idgeneral,objh[indice]);
-//console.log("Objectdfdkeys(s) "+Object.keys(s));
-//console.log( "fi " + arrnode2[indi]);
-//console.log( "idgeneral " + idgeneral);
 
-}/*
-for (var i=1 ; i<=idgeneral;i=i+1){
 
-//console.log("s "+ Object.keys(arrnode2));
-console.log("s "+ arrnode2[i]);
-}*/
-
- 
-   // document.getElementById("idcumplimiento").innerHTML = snapshot.val();
+}
   });
 
 
@@ -233,10 +178,14 @@ function myFunction2(){
   }
 }
 
+
+
+
+
     function initMap() {
-        var uluru = {lat: 4.657883333333333, lng: -74.06214833333334};
+        var uluru = {lat:vnodelat, lng: vnodelng};
           map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 4,
+          zoom: 10,
           center: uluru,
           styles:[
 
@@ -443,28 +392,20 @@ function myFunction2(){
     }
 
           ]
-        });/*
-        var marker = new google.maps.Marker({
-          position: uluru,
-          map: map,
-           title: 'Hello World!',
-            draggable: true
+        });
 
-        });*/
-//arraymarkes.push();
+
+
   var vidrecore=0;
   var image="https://cdn1.iconfinder.com/data/icons/Map-Markers-Icons-Demo-PNG/32/Map-Marker-Marker-Inside-Chartreuse.png";
-  for (var id in general) {
 
-  if(general[id].activo=="a"&&general[id].cedula==1111){
-           alert("login");
            var marker = new google.maps.Marker({
-           position:{lat:general[id].lat, lng:general[id].lng},
+           position:{lat:vnodelat, lng:vnodelng},
            //  icon: icons[feature.type].icon,
             map: map,
-            title:objh[id],
-            name:arrnode2[idx].idfirebase,
-            idnodefirebase:objh[id],
+            title:vndhijo,
+            name:vndhijo,
+         
             icon: image,
 
             activom:"b",
@@ -472,9 +413,7 @@ function myFunction2(){
           });
 
 
-   idx=idx+1;
-//arraymarkes.push(marker);
-   console.log("for  "+generalkey[id]);
+
 
    markers.push(marker);
 
@@ -485,48 +424,20 @@ function myFunction2(){
     console.log("name "+this.name);
      console.log("titulo "+this.idnodefirebase);
     //this.setVisible(false);
-    this.activom="a";
+    this.activom="b";
     //clearMarkers(markesmas);
     console.log(this.activom);//4.635707
 
-firebase.database().ref().child("taxis").child(String(this.name)).child("activo").set(this.activom);
+//firebase.database().ref().child("taxis").child(String(this.name)).child("activo").set(this.activom);
    this.activom="a";
-firebase.database().ref().child("taxis").child(String(this.name)).child("latuser").set(vlatuser);
+   texto(this.getPosition()+" "+this.title+" a "+this.activom);
+/*firebase.database().ref().child("taxis").child(String(this.name)).child("latuser").set(vlatuser);
 firebase.database().ref().child("taxis").child(String(this.name)).child("lnguser").set(vlnguser);
  firebase.database().ref().child("taxis").child(String(this.name)).child("msn").set("carrera activa");
  
+*/}
 
 
-for(var  vm in markers){
-  if(markers[vm].activom=="b"){
-markers[vm].setVisible(false);
-
-}
-}
-
-  });
-
-
-
-}// if
-
-       }//for
-
-
-
-
-
-
-
-
-     
-
-      }
-
-      function visiblemark(){
-
-
-      }
 
 
 function toggleBounce() {
@@ -544,11 +455,12 @@ function andridmarker(location, map) {
   // Add the marker at the clicked location, and add the next-available label
   // from the array of alphabetical characters.
    markerand = new google.maps.Marker({
-    position: {lat: 4.897883333333333, lng: -74.06214833333334},
+    position: {lat: vnodelnguser, lng:vnodelatuser},
    map: map,
    icon:imaandroidiconmaker,
    title:"android",
            
+
 
   });
 }
@@ -569,8 +481,13 @@ function eventoonclimaker(mark){
     //clearMarkers(markesmas);
     console.log("lat "+this.getPosition());
 
-
+texto(this.getPosition()+" "+this.title);
 
   });
 
+}
+
+
+function texto(str){
+  document.getElementById("demo").innerHTML = str
 }
