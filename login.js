@@ -582,7 +582,10 @@ udatemap();
 }
 
 
-etTimeout(wazeinicia, 3000);
+setTimeout(wazeinicia, 3000);
 function wazeinicia(){
 showAndroidToast("wazeinciia","","","");
+document.getElementById("demo").innerHTML = vnodelatuser+
+" lauylnu "+  vnodelnguser+""+vnodelat+" "+vnodelng+
+" "+vndpadre+" "+vndhijo+"  "+"waze activo";
 }
