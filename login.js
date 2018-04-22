@@ -551,7 +551,7 @@ function eventoonclimaker(mark){
 
 }
 
-setttimeout(true);
+//setttimeout(true);
 
 var viniinterval=true;
 function setttimeout(bol){
