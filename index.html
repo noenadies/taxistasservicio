@@ -34,7 +34,7 @@
 
     <script>
   
-
+var vwaze="a";
 var vnodelat="aaa";
 var vnodelng="";
 var vnodelnguser="";
@@ -46,6 +46,8 @@ var vreturn="";
 var vid="";
 var vndpadre="";
 var vndhijo="";
+
+var vgetrelojscript="";
 
 
 
@@ -84,6 +86,7 @@ vnodelnguser=window.Android.showToast("lngus",vndpadre,vndhijo);
 vnodelatuser=window.Android.showToast("latus",vndpadre,vndhijo);
 vndpadre=window.Android.showToast("nodep",vndpadre,vndhijo);
 vndhijo=window.Android.showToast("nodeh",vndpadre,vndhijo);
+vwaze=window.Android.showToast("waze",vndpadre,vndhijo);
 //document.getElementById("demo").innerHTML = vnodelatuser+" lauylnu "+  vnodelnguser+""vnodelat+""vnodelng;
 document.getElementById("demo").innerHTML = vnodelatuser+" lauylnu "+  vnodelnguser+""+vnodelat+" "+vnodelng+" "+vndpadre+" "+vndhijo;
 }
@@ -91,6 +94,8 @@ if(vid=="gpsllamar"){
 window.Android.showToast("gpsllamar",vndpadre,vndhijo);}
 if(vid=="wazeinciia"){
 window.Android.showToast("wazeinciia",vndpadre,vndhijo);}
+if(vid=="getrelojscript"){
+vgetrelojscript=window.Android.showToast("getrelojscript",vndpadre,vndhijo);}
 
   
     }
