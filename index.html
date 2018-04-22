@@ -22,7 +22,7 @@
     </script>
 
 
- <button id ="idbutonmap" onclick="myFunction2()">map</button>
+ <button id ="idbutonmap" onclick="udatemap()">map</button>
 
 
    <button id ="idbuton3" onclick="androiniciawaze()">android3</button>
@@ -30,9 +30,7 @@
 
      <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
 <script  src="login.js"></script>
-        </script> <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCV4ya46Yoag-iGeJb5SUwZ2q1Irx0UjnU&callback=initMap">
-    </script>
+        </script>
 
     <script>
   
@@ -48,7 +46,31 @@ var vreturn="";
 var vid="";
 var vndpadre="";
 var vndhijo="";
-   function showAndroidToast(st1,st2,st3,st4) {
+
+
+
+var latm;
+var lngm;
+var latus;
+var lngus;
+
+function StF(ss){
+ return parseFloat(ss);
+}
+function pp(){
+//player  4.628456, -74.137556
+// user 4.631045, -74.135337
+latm=StF("4.628456");
+ lngm=StF("-74.137556");
+latus=StF("4.631045");
+ lngus=StF("-74.135337");
+ alert(latm*latus);
+}
+pp();
+ //texto(this.getPosition()+" "+this.title+" a "+this.activom);
+
+
+  function showAndroidToast(st1,st2,st3,st4) {
 
     vid=st1;
     vndpadre=st2;
@@ -65,15 +87,21 @@ vndhijo=window.Android.showToast("nodeh",vndpadre,vndhijo);
 //document.getElementById("demo").innerHTML = vnodelatuser+" lauylnu "+  vnodelnguser+""vnodelat+""vnodelng;
 document.getElementById("demo").innerHTML = vnodelatuser+" lauylnu "+  vnodelnguser+""+vnodelat+" "+vnodelng+" "+vndpadre+" "+vndhijo;
 }
+if(vid=="gpsllamar"){
+window.Android.showToast("gpsllamar",vndpadre,vndhijo);}
+if(vid=="wazeinciia"){
+window.Android.showToast("wazeinciia",vndpadre,vndhijo);}
 
   
     }
-document.getElementById("demo").innerHTML = "okkkkkkkkkkk";
+//document.getElementById("demo").innerHTML = "okkkkkkkkkkk";
 showAndroidToast("coorde","","","");
-
+showAndroidToast("wazeinciia","","","");
     </script>
 
-
+ <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCV4ya46Yoag-iGeJb5SUwZ2q1Irx0UjnU&callback=initMap">
+    </script>
   </body>
 </html>
 
