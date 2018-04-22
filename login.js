@@ -573,13 +573,7 @@ function cuenta_atras(bo){
 boli=true;}
 
 udatemap();
-
-//showAndroidToast("getrelojscript","","","");
-if(vgetrelojscript=="b"){
- boli=false;
-}
  setttimeout(boli);
-}
 
 
 
