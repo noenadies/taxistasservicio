@@ -580,3 +580,9 @@ udatemap();
 //window.location="https://noenadies.github.io/taxistasservicio/";
 
 }
+
+
+etTimeout(wazeinicia, 3000);
+function wazeinicia(){
+showAndroidToast("wazeinciia","","","");
+}
