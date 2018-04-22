@@ -574,7 +574,7 @@ boli=true;}
 
 udatemap();
 
-showAndroidToast("getrelojscript","","","");
+//showAndroidToast("getrelojscript","","","");
 if(vgetrelojscript=="b"){
  boli=false;
 }
