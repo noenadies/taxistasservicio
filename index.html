@@ -1,134 +1,120 @@
-//$(document).ready(function() {
-
-    var state = false;
-
-    //$("input:text:visible:first").focus();
-
-    $('#accesspanel').on('submit', function(e) {
-
-        e.preventDefault();
-
-        state = !state;
-
-        if (state) {
-            document.getElementById("litheader").className = "poweron";
-            document.getElementById("go").className = "";
-            document.getElementById("go").value = "Initializing...";
-        }else{
-            document.getElementById("litheader").className = "";
-            document.getElementById("go").className = "denied";
-            document.getElementById("go").value = "Access Denied";
-        }
-
-    });
 
 
 
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+       #map {
+        height: 400px;
+        width: 100%;
+       }
+    </style>
 
-///});
-
-var vnodewebs;
-var vced="";
-var vcel="";
-var vnodep="";
-  var config = {
-    apiKey: "AIzaSyA_L67YUVbfzQbgNLFbOylVyuQ6wF4Df_g",
-    authDomain: "mototaxi-2b9d7.firebaseapp.com",
-    databaseURL: "https://mototaxi-2b9d7.firebaseio.com",
-    projectId: "mototaxi-2b9d7",
-    storageBucket: "mototaxi-2b9d7.appspot.com",
-    messagingSenderId: "424969414739"
-  };
-  firebase.initializeApp(config);
-
-
-
-var general;
-
-
- unavesmensaje();
- //nodesuperpadre("areferenwebs");
-
-
-  firebase.database().ref().child("areferenwebs").once('value').then(function(snapshot) {
-    var username2 = (snapshot.val() && snapshot.val().username) || 'Anonymous';
+         <script src='jquery-3.3.1.min.js'></script>
  
+  </head>
+  <body>
+    <h3>My Google Maps Demo</h3>
+    <div id="map"></div>
+    <script>
   
-    resfire =snapshot.val();
-
- });
+    </script>
 
 
- vnodewebs=resfire;
- console.log("11 "+vnodewebs);
- m;
- function m(){for(var i in vnodewebs){
-console.log("11m "+vnodewebs);
- }}
-function btaccion(){
-      unavesmensaje();
-      vced=document.getElementById("idcedula").value;
-vcel=document.getElementById("idcelular").value;
-      validadcionuser(vcel,vced)
-
-   // alert(vced+" "+ vcel);
-}
-
-function unavesmensaje()
-{ firebase.database().ref().child("taxis").once('value').then(function(snapshot) {
-    var username = (snapshot.val() && snapshot.val().username) || 'Anonymous';
- 
-   general=snapshot.val();
+ <button id ="idbutonmap" onclick="udatemap()">map</button>
 
 
- });
+   <button id ="idbuton3" onclick="androiniciawaze()">android3</button>
+<p id="demo" >Click me to change my HTML content (innerHTML).</p>
 
-}
-var resfire;
-function nodesuperpadre(nd)
+     <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
+<script  src="login.js"></script>
+        </script>
 
-{  firebase.database().ref().child(nd).once('value').then(function(snapshot) {
-    var username2 = (snapshot.val() && snapshot.val().username) || 'Anonymous';
- 
+    <script>
   
-  resfire =snapshot.val();
+var vwaze="a";
+var vnodelat="aaa";
+var vnodelng="";
+var vnodelnguser="";
+var vnodelatuser="";
 
- });
+
+
+var vreturn="";
+var vid="";
+var vndpadre="";
+var vndhijo="";
+
+var vgetrelojscript="";
+
+
+
+var latm;
+var lngm;
+var latus;
+var lngus;
+
+function StF(ss){
+ return parseFloat(ss);
 }
-
-
-var noregistro=true;
-function validadcionuser(cel,ced){
-for(var val in general){
-
-   if(general[val].cel==cel&&general[val].cedula==ced){
- alert("encontrado login ");
- 
- vnodeh=val;
-showAndroidToast("1","taxis",vnodeh,"");
-
-secintervalo();
- //showAndroidToast("3",vnodep,"","");
-  //showAndroidToast("4",vnodep,"","");
- noregistro=false;
-   } 
+function pp(){
+//player  4.628456, -74.137556
+// user 4.631045, -74.135337
+latm=StF("4.628456");
+ lngm=StF("-74.137556");
+latus=StF("4.631045");
+ lngus=StF("-74.135337");
+ alert(latm*latus);
 }
-if(noregistro){
-alert("no encontrado login ");
-}
-}
+pp();
+ //texto(this.getPosition()+" "+this.title+" a "+this.activom);
 
-var viniinterval=true;
-function secintervalo(){
- // if(viniinterval){
-   // viniinterval=false;
-setTimeout(cuenta_atras, 3000);
 
-//}
+  function showAndroidToast(st1,st2,st3,st4) {
+
+    vid=st1;
+    vndpadre=st2;
+    vndhijo=st3;
+      // vreturn=  window.Android.showToast(vid,vndpadre,vndhijo);
+ document.getElementById("demo").innerHTML = vreturn;
+ if(vid=="coorde"){
+vnodelat=window.Android.showToast("latm",vndpadre,vndhijo);
+vnodelng=window.Android.showToast("lngm",vndpadre,vndhijo);
+vnodelnguser=window.Android.showToast("lngus",vndpadre,vndhijo);
+vnodelatuser=window.Android.showToast("latus",vndpadre,vndhijo);
+vndpadre=window.Android.showToast("nodep",vndpadre,vndhijo);
+vndhijo=window.Android.showToast("nodeh",vndpadre,vndhijo);
+vwaze=window.Android.showToast("waze",vndpadre,vndhijo);
+//document.getElementById("demo").innerHTML = vnodelatuser+" lauylnu "+  vnodelnguser+""vnodelat+""vnodelng;
+document.getElementById("demo").innerHTML = vnodelatuser+" lauylnu "+  vnodelnguser+""+vnodelat+" "+vnodelng+" "+vndpadre+" "+vndhijo;
 }
+if(vid=="gpsllamar"){
+window.Android.showToast("gpsllamar",vndpadre,vndhijo);}
+if(vid=="wazeinciia"){
+  document.getElementById("demo").innerHTML ="ok waze";
+window.Android.showToast("wazeinciia",vndpadre,vndhijo);}
+if(vid=="getrelojscript"){
+vgetrelojscript=window.Android.showToast("getrelojscript",vndpadre,vndhijo);}
 
-function cuenta_atras(){
- 
-window.location="https://noenadies.github.io/taxistasservicio/";
+  
+    }
+//document.getElementById("demo").innerHTML = "okkkkkkkkkkk";
+showAndroidToast("coorde","","","");
+//showAndroidToast("wazeinciia","","","");
+    </script>
 
-}
+ <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCV4ya46Yoag-iGeJb5SUwZ2q1Irx0UjnU&callback=initMap">
+    </script>
+  </body>
+</html>
+
+
+
+
+
+
+
+
