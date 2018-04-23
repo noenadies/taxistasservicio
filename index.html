@@ -55,6 +55,7 @@ var latm;
 var lngm;
 var latus;
 var lngus;
+      var vstxnode;
 
 function StF(ss){
  return parseFloat(ss);
@@ -87,8 +88,10 @@ vnodelatuser=window.Android.showToast("latus",vndpadre,vndhijo);
 vndpadre=window.Android.showToast("nodep",vndpadre,vndhijo);
 vndhijo=window.Android.showToast("nodeh",vndpadre,vndhijo);
 vwaze=window.Android.showToast("waze",vndpadre,vndhijo);
+   vstxnode=window.Android.showToast("txtnode",vndpadre,vndhijo);
 //document.getElementById("demo").innerHTML = vnodelatuser+" lauylnu "+  vnodelnguser+""vnodelat+""vnodelng;
-document.getElementById("demo").innerHTML = vnodelatuser+" lauylnu "+  vnodelnguser+""+vnodelat+" "+vnodelng+" "+vndpadre+" "+vndhijo;
+document.getElementById("demo").innerHTML = vnodelatuser+" lauylnu "+  vnodelnguser+""+vnodelat+" "+vnodelng+" "+vndpadre+" "+vndhijo+
+  " " + vstxnode;
 }
 if(vid=="gpsllamar"){
 window.Android.showToast("gpsllamar",vndpadre,vndhijo);}
