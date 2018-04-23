@@ -81,6 +81,7 @@ pp();
       // vreturn=  window.Android.showToast(vid,vndpadre,vndhijo);
  document.getElementById("demo").innerHTML = vreturn;
  if(vid=="coorde"){
+  vstxnodes=window.Android.showToast("txtnodes",vndpadre,vndhijo);
 vnodelat=window.Android.showToast("latm",vndpadre,vndhijo);
 vnodelng=window.Android.showToast("lngm",vndpadre,vndhijo);
 vnodelnguser=window.Android.showToast("lngus",vndpadre,vndhijo);
@@ -89,9 +90,10 @@ vndpadre=window.Android.showToast("nodep",vndpadre,vndhijo);
 vndhijo=window.Android.showToast("nodeh",vndpadre,vndhijo);
 vwaze=window.Android.showToast("waze",vndpadre,vndhijo);
 vstxnode=window.Android.showToast("txtnode",vndpadre,vndhijo);
+
 //document.getElementById("demo").innerHTML = vnodelatuser+" lauylnu "+  vnodelnguser+""vnodelat+""vnodelng;
 document.getElementById("demo").innerHTML = vnodelatuser+" lauylnu "+  vnodelnguser+""+vnodelat+" "+vnodelng+" "+vndpadre+" h "+vndhijo+
-  " nn " + vstxnode;
+  " nn " + vstxnode+" -- "+vstxnode;
 }
 if(vid=="gpsllamar"){
 window.Android.showToast("gpsllamar",vndpadre,vndhijo);}
