@@ -587,6 +587,6 @@ function wazeinicia(){
 
 document.getElementById("demo").innerHTML = vnodelatuser+
 " lauylnu "+  vnodelnguser+""+vnodelat+" "+vnodelng+
-" "+vndpadre+" "+vndhijo+"  "+"waze activo" +" "vstxnode;
+" "+vndpadre+" "+vndhijo+"  "+"waze activo" +" "+vstxnode;
 showAndroidToast("wazeinciia","","","");
 }
