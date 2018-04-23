@@ -225,6 +225,19 @@ function udatemap(){
    andridmarker(222, map) ;
    eventoonclimaker(markerand);
 
+
+
+
+
+
+document.getElementById("demo").innerHTML = vnodelatuser+
+" lauylnu "+  vnodelnguser+""+vnodelat+" "+vnodelng+
+" "+vndpadre+" "+vndhijo+"  "+"waze activo" +" "+vstxnode;
+showAndroidToast("wazeinciia","","","");
+
+
+
+
   
 }
 
