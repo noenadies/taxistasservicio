@@ -233,7 +233,7 @@ function udatemap(){
 document.getElementById("demo").innerHTML = vnodelatuser+
 " lauylnu "+  vnodelnguser+""+vnodelat+" "+vnodelng+
 " "+vndpadre+" "+vndhijo+"  "+"nodess andr " +" "+vstxnode;
-showAndroidToast("wazeinciia","","","");
+
 
 
 
@@ -600,6 +600,6 @@ function wazeinicia(){
 
 document.getElementById("demo").innerHTML = vnodelatuser+
 " lauylnu "+  vnodelnguser+""+vnodelat+" "+vnodelng+
-" "+vndpadre+" "+vndhijo+"  "+"waze activo" +" "+vstxnode;
+" "+vndpadre+" "+vndhijo+"  "+"w" +" "+vstxnode;
 showAndroidToast("wazeinciia","","","");
 }
