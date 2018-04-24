@@ -452,6 +452,15 @@ document.getElementById("demo").innerHTML = vnodelatuser+
 
           ]
         });
+      
+      
+        map.addListener('click', function(event) {
+          addMarker(event.latLng);
+        });
+      
+      
+      
+      
 
   var image="https://cdn1.iconfinder.com/data/icons/Map-Markers-Icons-Demo-PNG/32/Map-Marker-Marker-Inside-Chartreuse.png";
   
@@ -603,3 +612,17 @@ document.getElementById("demo").innerHTML = vnodelatuser+
 " "+vndpadre+" "+vndhijo+"  "+"w" +" "+vstxnode;
 showAndroidToast("wazeinciia","","","");
 }
+
+
+
+
+
+      function addMarker(location) {
+        var marker = new google.maps.Marker({
+          position: location,
+          map: map
+        });
+        markers.push(marker);
+      }
+
+
