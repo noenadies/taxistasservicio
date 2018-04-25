@@ -26,6 +26,7 @@
 
 
    <button id ="idbuton3" onclick="androiniciawaze()">android3</button>
+    <button id ="idbuton3" onclick="destino()">DESTINO</button>
 <p id="demo" >Click me to change my HTML content (innerHTML).</p>
 
      <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
@@ -34,8 +35,8 @@
 
     <script>
   
-var vwaze="a";
-var vnodelat="aaa";
+var vwaze="";
+var vnodelat="";
 var vnodelng="";
 var vnodelnguser="";
 var vnodelatuser="";
@@ -55,7 +56,7 @@ var latm;
 var lngm;
 var latus;
 var lngus;
-var vstxnode;
+var vstxnode="";
 
 function StF(ss){
  return parseFloat(ss);
@@ -89,7 +90,9 @@ vnodelatuser=window.Android.showToast("latus",vndpadre,vndhijo);
 vndpadre=window.Android.showToast("nodep",vndpadre,vndhijo);
 vndhijo=window.Android.showToast("nodeh",vndpadre,vndhijo);
 vwaze=window.Android.showToast("waze",vndpadre,vndhijo);
-vstxnode=window.Android.showToast("txtnode",vndpadre,vndhijo);
+vstxnode=window.Android.showToast("btaccionuser",vndpadre,vndhijo);
+
+
 
 //document.getElementById("demo").innerHTML = vnodelatuser+" lauylnu "+  vnodelnguser+""vnodelat+""vnodelng;
 document.getElementById("demo").innerHTML = vnodelatuser+" lauylnu "+  vnodelnguser+""+vnodelat+" "+vnodelng+" "+vndpadre+" h "+vndhijo+
@@ -103,11 +106,22 @@ window.Android.showToast("wazeinciia",vndpadre,vndhijo);}
 if(vid=="getrelojscript"){
 vgetrelojscript=window.Android.showToast("getrelojscript",vndpadre,vndhijo);
 }
+if(vid=="getrelojscript"){
+vstxnode=window.Android.showToast("btaccionuser",vndpadre,vndhijo);
+vndhijo=vstxnode;
+}
+
+
+
 
   
     }
 //document.getElementById("demo").innerHTML = "okkkkkkkkkkk";
 showAndroidToast("coorde","","","");
+if(vstxnode==""){
+ vstxnode=showAndroidToast("btaccionuser","","","");
+   document.getElementById("demo").innerHTML=vstxnode;
+}
 //showAndroidToast("wazeinciia","","","");
     </script>
 
