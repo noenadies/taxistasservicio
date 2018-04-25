@@ -458,7 +458,21 @@ var veven;
 
   veven=  map.addListener('click', function(event) {
           addMarker(event.latLng);
+//console.log("new " +event.latLng.lat());
+
+latus=event.latLng.lat();
+lngus=event.latLng.lng();
+console.log("new " +latus+" la ln "+lngus);
+sfinirapnode("taxis",vstxnode,"latuser",latus);
+sfinirapnode("taxis",vstxnode,"lnguser",lngus);
+ document.getElementById("demo").innerHTML="new "+vstxnode;
+
+         // finirapnode(tx,nh,n)
+
+      //   destino(event.latLng);
         });
+
+  
 
 
 
@@ -606,12 +620,12 @@ udatemap();
 }
 
 
-setTimeout(wazeinicia, 3000);
+//setTimeout(wazeinicia, 3000);
 function wazeinicia(){
-/*
+
 document.getElementById("demo").innerHTML = vnodelatuser+
 " lauylnu "+  vnodelnguser+""+vnodelat+" "+vnodelng+
-" "+vndpadre+" "+vndhijo+"  "+"w" +" "+vstxnode;*/
+" "+vndpadre+" "+vndhijo+"  "+"w" +" "+vstxnode;
 showAndroidToast("wazeinciia","","","");
 }
 function btaccionuser(){
@@ -621,13 +635,23 @@ function btaccionuser(){
   function finirapnode(tx,nh,n){
       firebase.database().ref().child(tx).child(String(nh)).once('value').then(function(snapshot) {
     var username2 = (snapshot.val() && snapshot.val().username) || 'Anonymous';
- 
-  document.getElementById("demo").innerHTML
+
     //resfire =snapshot.val();
    vcaambfire=napshot.val()[n];
     alert(snapshot.val()[n]);
 
  });
+  }
+
+  function sfinirapnode(tx,nh,n,val){
+      firebase.database().ref().child(String(tx)).child(String(nh)).child(String(n)).set(val);
+ 
+
+
+  
+    alert("ssubio");
+
+ 
   }
 
 
@@ -640,8 +664,13 @@ function btaccionuser(){
         markers.push(marker);
       }
 
-      function destino(){
+      function destino(f){
 
-       veven=null;
-       alert("destino");
+
+for(var iu in f){console.log(f[iu]);}
+
       }
+
+  function androiniciawaze(){
+   wazeinicia();
+  }
