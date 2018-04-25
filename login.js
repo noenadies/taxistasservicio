@@ -13,6 +13,7 @@ var vnodelat="";
 var vnodelng="";
 var vnodelnguser="";
 var vnodelatuser="";
+var vcaambfire="";
 
 alert("ok");
 
@@ -236,7 +237,7 @@ document.getElementById("demo").innerHTML = vnodelatuser+
 
 
 
-
+var veven;
 
   
 }
@@ -452,15 +453,14 @@ document.getElementById("demo").innerHTML = vnodelatuser+
 
           ]
         });
-      
-      
-        map.addListener('click', function(event) {
+
+
+
+  veven=  map.addListener('click', function(event) {
           addMarker(event.latLng);
         });
-      
-      
-      
-      
+
+
 
   var image="https://cdn1.iconfinder.com/data/icons/Map-Markers-Icons-Demo-PNG/32/Map-Marker-Marker-Inside-Chartreuse.png";
   
@@ -494,6 +494,8 @@ document.getElementById("demo").innerHTML = vnodelatuser+
     console.log(this.activom);//4.635707
 
     this.activom="a";
+
+
 /*
 firebase.database().ref().child("taxis").child(String(this.name)).child("activo").set(this.activom);
    this.activom="a";
@@ -606,18 +608,31 @@ udatemap();
 
 setTimeout(wazeinicia, 3000);
 function wazeinicia(){
-
+/*
 document.getElementById("demo").innerHTML = vnodelatuser+
 " lauylnu "+  vnodelnguser+""+vnodelat+" "+vnodelng+
-" "+vndpadre+" "+vndhijo+"  "+"w" +" "+vstxnode;
+" "+vndpadre+" "+vndhijo+"  "+"w" +" "+vstxnode;*/
 showAndroidToast("wazeinciia","","","");
 }
+function btaccionuser(){
+  showAndroidToast("btaccionuser","","","");
+}
+
+  function finirapnode(tx,nh,n){
+      firebase.database().ref().child(tx).child(String(nh)).once('value').then(function(snapshot) {
+    var username2 = (snapshot.val() && snapshot.val().username) || 'Anonymous';
+ 
+  document.getElementById("demo").innerHTML
+    //resfire =snapshot.val();
+   vcaambfire=napshot.val()[n];
+    alert(snapshot.val()[n]);
+
+ });
+  }
 
 
 
-
-
-      function addMarker(location) {
+          function addMarker(location) {
         var marker = new google.maps.Marker({
           position: location,
           map: map
@@ -625,4 +640,8 @@ showAndroidToast("wazeinciia","","","");
         markers.push(marker);
       }
 
+      function destino(){
 
+       veven=null;
+       alert("destino");
+      }
