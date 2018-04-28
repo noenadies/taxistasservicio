@@ -243,10 +243,11 @@ var veven;
 }
 
     function initMap1() {
-        var uluru = {lat: 4.657883333333333, lng: -74.06214833333334};
+        var uluru = {lat: vnodelat, lng:vnodelng};
        map = new google.maps.Map(document.getElementById('map'), {
           zoom: 4,
           center: uluru,
+         mapTypeId: google.maps.MapTypeId.ROADMAP  ,
           styles:[
 
 {
@@ -455,8 +456,25 @@ var veven;
         });
 
 
-      
-      var contentString = '<div id="content">'+
+
+  veven=  map.addListener('click', function(event) {
+          addMarker(event.latLng);
+//console.log("new " +event.latLng.lat());
+
+latus=event.latLng.lat();
+lngus=event.latLng.lng();
+console.log("new " +latus+" la ln "+lngus);
+sfinirapnode("taxis",vstxnode,"latuser",latus);
+sfinirapnode("taxis",vstxnode,"lnguser",lngus);
+ document.getElementById("demo").innerHTML="new "+vstxnode;
+
+         // finirapnode(tx,nh,n)
+
+      //   destino(event.latLng);
+        });
+
+  
+ var contentString = '<div id="content">'+
             '<div id="siteNotice">'+
             '</div>'+
             '<h1 id="firstHeading" class="firstHeading">Uluru</h1>'+
@@ -480,39 +498,12 @@ var veven;
         var infowindow = new google.maps.InfoWindow({
           content: contentString
         });
-      
-      
-      
-      
-      
-      
-      
-      
-
-  veven=  map.addListener('click', function(event) {
-          addMarker(event.latLng);
-//console.log("new " +event.latLng.lat());
-
-latus=event.latLng.lat();
-lngus=event.latLng.lng();
-console.log("new " +latus+" la ln "+lngus);
-sfinirapnode("taxis",vstxnode,"latuser",latus);
-sfinirapnode("taxis",vstxnode,"lnguser",lngus);
- document.getElementById("demo").innerHTML="new "+vstxnode;
-
-         // finirapnode(tx,nh,n)
-
-      //   destino(event.latLng);
-        });
-
-  
-
 
 
   var image="https://cdn1.iconfinder.com/data/icons/Map-Markers-Icons-Demo-PNG/32/Map-Marker-Marker-Inside-Chartreuse.png";
   
            var marker = new google.maps.Marker({
-           position:{lat:latm, lng: lngm},
+           position:{lat: vnodelat, lng:vnodelng};
            //  icon: icons[feature.type].icon,
             map: map,
             title:"uno",
@@ -541,7 +532,7 @@ sfinirapnode("taxis",vstxnode,"lnguser",lngus);
     console.log(this.activom);//4.635707
 
     this.activom="a";
-infowindow.open(map,this);
+    infowindow.open(map,this);
 
 /*
 firebase.database().ref().child("taxis").child(String(this.name)).child("activo").set(this.activom);
