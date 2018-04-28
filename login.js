@@ -8,7 +8,9 @@ var objh;
   var map;
 var markers = [];
 
-
+var vnodep="";
+var vnodelat="";
+var vnodelng="";
 var vnodelnguser="";
 var vnodelatuser="";
 var vcaambfire="";
@@ -216,10 +218,13 @@ console.log("s "+ arrnode2[i]);
 
 var idx=0;
 
+vnodelat=4.630381;
+vnodelng=-74.137992;
 function udatemap(){
 
-
-   initMap1();
+vnodelat=4.630381;
+vnodelng=-74.137992;
+   initMap1(vnodelat,vnodelng);
    andridmarker(222, map) ;
    eventoonclimaker(markerand);
 
@@ -239,8 +244,8 @@ var veven;
   
 }
 
-    function initMap1() {
-        var uluru = {lat: vnodelat, lng:vnodelng};
+    function initMap1(a,b) {
+        var uluru = {lat:a, lng:b};
        map = new google.maps.Map(document.getElementById('map'), {
           zoom: 4,
           center: uluru,
@@ -500,7 +505,7 @@ sfinirapnode("taxis",vstxnode,"lnguser",lngus);
   var image="https://cdn1.iconfinder.com/data/icons/Map-Markers-Icons-Demo-PNG/32/Map-Marker-Marker-Inside-Chartreuse.png";
   
            var marker = new google.maps.Marker({
-           position:{lat: vnodelat, lng:vnodelng};
+           position:{lat:latm, lng: lngm},
            //  icon: icons[feature.type].icon,
             map: map,
             title:"uno",
