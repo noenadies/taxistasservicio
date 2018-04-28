@@ -8,9 +8,7 @@ var objh;
   var map;
 var markers = [];
 
-var vnodep="";
-var vnodelat="";
-var vnodelng="";
+
 var vnodelnguser="";
 var vnodelatuser="";
 var vcaambfire="";
@@ -217,7 +215,6 @@ console.log("s "+ arrnode2[i]);
 
 
 var idx=0;
-
 
 function udatemap(){
 
