@@ -704,3 +704,4 @@ for(var iu in f){console.log(f[iu]);}
   function androiniciawaze(){
    wazeinicia();
   }
+//
