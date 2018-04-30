@@ -224,7 +224,7 @@ function udatemap(){
 latm=parseFloat(vnodelat); 
 lngm=parseFloat(vnodelng);
 document.getElementById("demo").innerHTML = vnodelatuser+
-" lauylnu "+  vnodelnguser+""+vnodelat+" "+vnodelng+
+" lauylnu ok  "+  vnodelnguser+""+vnodelat+" "+vnodelng+
 " "+vndpadre+" "+vndhijo+"  "+"nodess andr " +" "+vstxnode;
 
 
