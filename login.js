@@ -251,7 +251,7 @@ var veven;
     function initMap1(a,b) {
         var uluru = {lat:a, lng:b};
        map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 11,
+          zoom: 17,
           center: uluru,
          mapTypeId: google.maps.MapTypeId.ROADMAP  ,
           styles:[
