@@ -223,10 +223,12 @@ function udatemap(){
 
 latm=parseFloat(vnodelat); 
 lngm=parseFloat(vnodelng);
+document.getElementById("demo").innerHTML = vnodelatuser+
+" lauylnu "+  vnodelnguser+""+vnodelat+" "+vnodelng+
+" "+vndpadre+" "+vndhijo+"  "+"nodess andr " +" "+vstxnode;
 
 
-
-   initMap1(vnodelat,vnodelng);
+   initMap1(parseFloat(vnodelat),parseFloat(vnodelng));
    andridmarker(222, map) ;
    eventoonclimaker(markerand);
 
@@ -235,9 +237,9 @@ lngm=parseFloat(vnodelng);
 
 
 
-document.getElementById("demo").innerHTML = vnodelatuser+
+/*document.getElementById("demo").innerHTML = vnodelatuser+
 " lauylnu "+  vnodelnguser+""+vnodelat+" "+vnodelng+
-" "+vndpadre+" "+vndhijo+"  "+"nodess andr " +" "+vstxnode;
+" "+vndpadre+" "+vndhijo+"  "+"nodess andr " +" "+vstxnode;*/
 
 
 
