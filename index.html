@@ -30,18 +30,19 @@
 <p id="demo" >Click me to change my HTML content (innerHTML).</p>
 
      <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
-<script  src="login.js"></script>
+
         </script>
 
     <script>
-  
+ var w = window.innerWidth;
+var h = window.innerHeight; 
 var vwaze="";
-var vnodelat="";
-var vnodelng="";
+var vnodelat="b";
+var vnodelng="a";
 var vnodelnguser="";
 var vnodelatuser="";
 
-
+4.626202, -74.138013
 
 var vreturn="";
 var vid="";
@@ -81,7 +82,8 @@ pp();
     vndhijo=st3;
       // vreturn=  window.Android.showToast(vid,vndpadre,vndhijo);
  document.getElementById("demo").innerHTML = vreturn;
- if(vid=="coorde"){
+ if(vid=="coorde"&&w<=400){
+  alert("con window");
   vstxnodes=window.Android.showToast("txtnodes",vndpadre,vndhijo);
 vnodelat=window.Android.showToast("latm",vndpadre,vndhijo);
 vnodelng=window.Android.showToast("lngm",vndpadre,vndhijo);
@@ -127,7 +129,8 @@ if(vstxnode==""){
 
  <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCV4ya46Yoag-iGeJb5SUwZ2q1Irx0UjnU&callback=initMap">
-    </script>
+  
+    </script>  <script  src="login.js"></script>
   </body>
 </html>
 
