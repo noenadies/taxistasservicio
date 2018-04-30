@@ -216,8 +216,8 @@ var idx=0;
 latm=vnodelat; 
 lngm=vnodelng;
 
-vnodelat=4.630381;
-vnodelng=-74.137992;
+//vnodelat=4.630381;
+//vnodelng=-74.137992;
 alert("vnodelat "+vnodelat);
 function udatemap(){
 
