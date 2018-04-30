@@ -8,11 +8,7 @@ var objh;
   var map;
 var markers = [];
 
-var vnodep="";
-var vnodelat="";
-var vnodelng="";
-var vnodelnguser="";
-var vnodelatuser="";
+
 var vcaambfire="";
 
 alert("ok");
@@ -217,13 +213,19 @@ console.log("s "+ arrnode2[i]);
 
 
 var idx=0;
+latm=vnodelat; 
+lngm=vnodelng;
 
 vnodelat=4.630381;
 vnodelng=-74.137992;
+alert("vnodelat "+vnodelat);
 function udatemap(){
 
-vnodelat=4.630381;
-vnodelng=-74.137992;
+latm=parseFloat(vnodelat); 
+lngm=parseFloat(vnodelng);
+
+
+
    initMap1(vnodelat,vnodelng);
    andridmarker(222, map) ;
    eventoonclimaker(markerand);
