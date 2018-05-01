@@ -704,3 +704,55 @@ for(var iu in f){console.log(f[iu]);}
   function androiniciawaze(){
    wazeinicia();
   }
+
+
+
+
+var vinfo=0;
+var  vzoom=0;
+  function btmenos(){
+vzoom=map.getZoom()-1;
+ map.setZoom(vzoom);
+/*
+if( document.getElementById("map").style.display == "none"){
+           document.getElementById("map").style.display = "block";
+     document.getElementById("idmodal").style.height = "initial";
+
+   }else{
+
+       document.getElementById("map").style.display = "none";
+     document.getElementById("idmodal").style.height = "400px";
+   }
+*/
+
+  }
+
+
+  function btmas(){
+ vzoom=map.getZoom()+1;
+
+
+ map.setZoom(vzoom);
+/*
+if( document.getElementById("map").style.display == "none"){
+           document.getElementById("map").style.display = "block";
+     document.getElementById("idmodal").style.height = "initial";
+
+   }else{
+
+       document.getElementById("map").style.display = "none";
+     document.getElementById("idmodal").style.height = "400px";
+   }
+*/
+
+  }
+
+
+
+
+
+
+
+
+
+
