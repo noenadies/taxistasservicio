@@ -11,7 +11,6 @@ var markers = [];
 
 var vcaambfire="";
 
-alert("ok");
 
  // Initialize Firebase
   var config = {
@@ -32,7 +31,12 @@ var general;
 
 unavesmensaje();
 
-
+firebase.database().ref().child("taxis").child(String(vndhijo)).child("usuario").on('value', function(snapshot) {
+  //updateStarCount(postElement, snapshot.val());
+document.getElementById("demo").innerHTML = vnodelatuser+" lauylnu "+  vnodelnguser+""+vnodelat+" "+vnodelng+" "+vndpadre+" h "+vndhijo+
+  " nn " + vstxnode+" -- "+vstxnode;
+  //alert(snapshot.val());
+});
 
 
 var arrnode2=[];
