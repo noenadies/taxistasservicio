@@ -34,7 +34,7 @@ unavesmensaje();
 firebase.database().ref().child("taxis").child(String(vndhijo)).child("usuario").on('value', function(snapshot) {
   //updateStarCount(postElement, snapshot.val());
 document.getElementById("demo").innerHTML = vnodelatuser+" lauylnu "+  vnodelnguser+""+vnodelat+" "+vnodelng+" "+vndpadre+" h "+vndhijo+
-  " nn " + vstxnode+" -- "+vstxnode;
+  " nn " + vstxnode+" --*** "+vstxnode;
   //alert(snapshot.val());
 });
 
